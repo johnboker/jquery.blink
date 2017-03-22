@@ -1,18 +1,29 @@
 <html>
 
 <head>
-	<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
-	<script src="jquery.blink.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script src="jquery.blink.js"></script>
 
-	<script>
-		$(document).ready(function() {
-			$('.blink').blink({delay: 200});
-		});
-	</script>
+    <script>
+        $(document).ready(function() {
+            $('.blink').blink({
+                delay: 200
+            });
+            $('#stop').click(function() {
+                $('.blink').unblink();
+            });
+            $('#stop2').click(function() {
+                $('.blink2').unblink();
+            });
+        });
+    </script>
 </head>
 
 <body>
-	<span class="blink">this</span> is some <span class="blink">blinking</span> text.
+    <span class="blink">this</span> is some <span class="blink blink2">blinking</span> text.
+
+    <input type="button" value="Stop" id="stop" />
+    <input type="button" value="Stop 2" id="stop2" />
 </body>
 
 </html>
